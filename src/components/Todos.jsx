@@ -47,10 +47,10 @@ const Todos = () => {
             <FlexContainer  col>
                 { notes.length > 0 &&
                     notes.map( note => (
-                        <InfoContainer key={note.id} id={note.id}>
+                        <InfoContainer key={note.id} id={note.id} title={note.date}>
                             <CustomCheckMark onChange={(e)=>setCheckedStatus(e, note.id, note.checked)}>
                                 <input type="checkbox" defaultChecked={note.checked}/>
-                                <b>{note.date && note.date + ' • '}{ note.title }</b>
+                                <b>{ note.title }</b>
                                 <span></span>
                             </CustomCheckMark>
                             <IconButton onClick={()=>{
@@ -85,6 +85,7 @@ const TodoContainer = styled.div`
     background-color: var(--grey-light4);
     border-radius: .25rem;
     position: relative;
+    scrollbar-width: thin;
 
     &::-webkit-scrollbar {
         width: .5rem;
@@ -107,7 +108,25 @@ const InfoContainer = styled(FlexWrap)`
     background-color: var(--grey-light5);
     box-shadow: 0 2px 4px var(--grey-light3);
     padding: .875rem 1rem .875rem 1rem;
-    margin-bottom: .25rem;
+    margin-bottom: .5rem;
+    position: relative;
+
+    &::after {
+        content: attr(title);
+        position: absolute;
+        display: inline-block;
+        font-size: .875rem;
+        color: var(--grey-light2);
+        background-color: #fff;
+        width: fit-content;
+        padding: .125rem .75rem;
+        top: -.375rem;
+        left: 5%;
+        border-radius: 1rem;
+        font-weight: 500;
+        border: 1px solid var(--grey-light4);
+        /* transform: translateX(-50%); */
+    }
 
     &:hover{
         box-shadow: 0 2px 6px var(--grey-light2);
@@ -135,12 +154,12 @@ const CustomCheckMark = styled.label`
     }
     b {
         display: inline-block;
-        font-weight: 400;
+        font-weight: 500;
         transform: translateY(.25rem);
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
-        color: var(--grey-main);
+        color: var(--secondary-color);
         width: calc(100% - 4rem);
     }
     input {

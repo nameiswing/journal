@@ -16,7 +16,7 @@ const Drawer = ({ drawn, details, clickHandler }) => {
                 </div>
             
             <p style={{color:'var(--primary-color)'}}>Date: <b>{drawn && details.date}</b></p>
-            <p>{drawn && details.body}</p>
+            <pre>{drawn && details.body}</pre>
         </Container>
     )
 }
@@ -36,6 +36,7 @@ const Container = styled.div`
     overflow-y: scroll;
     border-radius: .25rem;
     background-color: white;
+    scrollbar-width: thin;
 
     &::-webkit-scrollbar {
         width: .5rem;
@@ -59,8 +60,14 @@ const Container = styled.div`
         color: var(--grey-main);
     }
 
-    p {
+    p, pre {
         padding: 0 1.5rem;
         color: var(--grey-main);
+        white-space: wrap;
+        white-space: pre-wrap;       /* Since CSS 2.1 */
+        white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+        white-space: -pre-wrap;      /* Opera 4-6 */
+        white-space: -o-pre-wrap;    /* Opera 7 */
+        word-wrap: break-word; 
     }
 `

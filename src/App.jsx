@@ -12,10 +12,11 @@ export const useGlobalStates = () => useContext(GlobalStates);
 
 const App = () => {
 
-    const [ notes, setNotes ] = useState([...getNotesFromLocal()]);
     const [ inputValues, setInputValues ] = useState({ 
         title:'', body:'', id: '', checked: false, date: ''
-    })
+    });
+    
+    const [ notes, setNotes ] = useState([...getNotesFromLocal()]);
     
     function getNotesFromLocal() {
         if(!!localStorage.getItem('todo-notes')) {

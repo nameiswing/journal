@@ -45,7 +45,8 @@ const Form = () => {
     function saveInputValues() {
         let titleValue = inputValues.title.replace(/\s/g, '').length > 0;
         let bodyValue = inputValues.body.replace(/\s/g, '').length > 0;
-        if( !titleValue || !bodyValue ) return;
+        let dateValue = inputValues.date.length > 0;
+        if( !titleValue || !bodyValue || !dateValue) return window.alert('All fields required.');
 
         setNotes([...notes, {...inputValues, id: uuid() }]);
         clearInput();

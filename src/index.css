@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+
+:root {
+    --font-main: 'Outfit', sans-serif;
+    --font-alt: 'Rubik', sans-serif;
+    --primary-color: #0ca0aa;
+    --primary-light: #0ca0aa13;
+    --primary-color-light: hsl(183, 68%, 92%);
+    --secondary-color: #244b77;
+    --grey-main: #37474f;
+    --grey-light: #4c646e;
+    --grey-light2: #78909c;
+    --grey-light3: #b0bec5;
+    --grey-light4: #eceff1;
+    --grey-light5: #fcfdfd;
+    --error: #e95959;
+    font-size: 16px;
+}
+* {
+    box-sizing: border-box;
+    font-family: var(--font-alt);
+    transition: .2s;
+}
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#root {
+    box-shadow: 0 .25rem .5rem #244b7760;
+    border-radius: .5rem;
+    overflow: hidden;
+}

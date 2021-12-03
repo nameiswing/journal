@@ -52,7 +52,12 @@ const Form = () => {
         clearInput();
     };
     function clearInput() {
-        setInputValues({ title: '', body: '', checked: false, date: '' });
+        setInputValues({ 
+            title: '', 
+            body: '', 
+            checked: false, 
+            date: new Date().toLocaleDateString('en-ca'), 
+        });
     };
 
     useEffect( () => console.log(notes), [notes])

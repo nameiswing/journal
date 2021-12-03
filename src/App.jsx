@@ -13,7 +13,11 @@ export const useGlobalStates = () => useContext(GlobalStates);
 const App = () => {
 
     const [ inputValues, setInputValues ] = useState({ 
-        title:'', body:'', id: '', checked: false, date: ''
+        title:'', 
+        body:'', 
+        id: '', 
+        checked: false, 
+        date: new Date().toLocaleDateString('en-ca'),
     });
     
     const [ notes, setNotes ] = useState([...getNotesFromLocal()]);

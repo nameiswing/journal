@@ -2,7 +2,7 @@ import FlexContainer, { FlexWrap } from "./utils/FlexContainer"
 import { useGlobalStates } from "../App"
 import styled from "@emotion/styled";
 import { AiOutlineDelete, AiOutlineMore } from "react-icons/ai";
-import { IconButton } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
 import { useState } from "react";
 import Drawer from "./Drawer";
 
@@ -53,16 +53,20 @@ const Todos = () => {
                                 <b>{ note.title }</b>
                                 <span></span>
                             </CustomCheckMark>
-                            <IconButton onClick={()=>{
-                                setIsOpen(true);
-                                setDetails({
-                                    heading: note.title,
-                                    body: note.body,
-                                    date: note.date
-                                })
-                            }}>
-                                <AiOutlineMore color="var(--primary-color)"/>
-                            </IconButton>
+                            <Button 
+                                onClick={()=>{
+                                    setIsOpen(true);
+                                    setDetails({
+                                        heading: note.title,
+                                        body: note.body,
+                                        date: note.date
+                                    })
+                                }}
+                                size="small"
+                                startIcon={<AiOutlineMore color="var(--primary-color)"/>}
+                            >
+                                See&nbsp;More
+                            </Button>
                             <IconButton onClick={() => deleteNote(note.id)}>
                                 <AiOutlineDelete color="var(--error)"/>
                             </IconButton>
@@ -146,7 +150,7 @@ const CustomCheckMark = styled.label`
     -ms-user-select: none;
     user-select: none;
     transform: translateY(.25rem);
-    width: 100%;
+    width: 50%;
 
     &:hover input ~ span {
         background-color: var(--primary-color);

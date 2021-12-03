@@ -31,8 +31,8 @@ const Container = styled.div`
     transform: ${ props => props.drawn ? 'translate(-50%, -50%)' : 'translate(-200%, -50%)'};
     /* margin: .75rem; */
     padding: .75rem;
-    width: calc(100% - 1.125rem);
-    height: calc(100% - 1.25rem);
+    width: calc(100% - 1rem);
+    height: calc(100% - 1rem);
     overflow-y: scroll;
     border-radius: .25rem;
     background-color: white;

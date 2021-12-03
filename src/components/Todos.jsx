@@ -53,23 +53,25 @@ const Todos = () => {
                                 <b>{ note.title }</b>
                                 <span></span>
                             </CustomCheckMark>
-                            <Button 
-                                onClick={()=>{
-                                    setIsOpen(true);
-                                    setDetails({
-                                        heading: note.title,
-                                        body: note.body,
-                                        date: note.date
-                                    })
-                                }}
-                                size="small"
-                                startIcon={<AiOutlineMore color="var(--primary-color)"/>}
-                            >
-                                See&nbsp;More
-                            </Button>
-                            <IconButton onClick={() => deleteNote(note.id)}>
-                                <AiOutlineDelete color="var(--error)"/>
-                            </IconButton>
+                            <FlexContainer>
+                                <Button
+                                    onClick={()=>{
+                                        setIsOpen(true);
+                                        setDetails({
+                                            heading: note.title,
+                                            body: note.body,
+                                            date: note.date
+                                        })
+                                    }}
+                                    size="small"
+                                    startIcon={<AiOutlineMore color="var(--primary-color)"/>}
+                                >
+                                    See&nbsp;More
+                                </Button>
+                                <IconButton onClick={() => deleteNote(note.id)}>
+                                    <AiOutlineDelete color="var(--error)"/>
+                                </IconButton>
+                            </FlexContainer>
                         </InfoContainer>
                     ))
                 }
@@ -150,7 +152,7 @@ const CustomCheckMark = styled.label`
     -ms-user-select: none;
     user-select: none;
     transform: translateY(.25rem);
-    width: 50%;
+    width: 70%;
 
     &:hover input ~ span {
         background-color: var(--primary-color);
